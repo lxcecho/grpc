@@ -1,8 +1,7 @@
-package io.netty;
+package io.grpc.examples.myservice;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import io.netty.service.PersonServiceImpl;
 
 /**
  * @author lxcecho 909231497@qq.com

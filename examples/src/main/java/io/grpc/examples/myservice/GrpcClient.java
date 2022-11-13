@@ -1,9 +1,9 @@
-package io.netty;
+package io.grpc.examples.myservice;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.proto.*;
 import io.grpc.stub.StreamObserver;
-import org.netty.proto.*;
 
 import java.time.LocalDateTime;
 import java.util.Iterator;

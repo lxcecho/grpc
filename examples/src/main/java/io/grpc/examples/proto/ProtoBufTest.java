@@ -1,7 +1,7 @@
-package io.netty.proto;
+package io.grpc.examples.proto;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import org.netty.proto.DataInfo;
+import io.grpc.proto.DataInfo;
 
 /**
  * @author lxcecho 909231497@qq.com

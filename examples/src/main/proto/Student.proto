@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package io.netty.proto;
+package io.grpc.proto;
 
 option optimize_for = SPEED;
-option java_package = "io.netty.proto";
+option java_package = "io.grpc.proto";
 option java_outer_classname = "DataInfo";
 
 message Student {
