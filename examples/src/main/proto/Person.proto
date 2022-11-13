@@ -1,0 +1,60 @@
+syntax = 'proto3';
+
+package io.netty.proto;
+
+option java_package = "io.netty.proto";
+option java_outer_classname = "PersonInfo";
+option java_multiple_files = true;
+
+service PersonService {
+  /**
+   * 1 最简单的一个方式：单个请求对象 单个返回对象
+   */
+  rpc GetRealNameByUsername(MyRequest) returns (MyResponse) {}
+
+  /**
+   * 2 单个请求对象，流式结果返回【即一个迭代器 Iterator】
+   */
+  rpc GetPersonByAge(PersonRequest) returns (stream PersonResponse) {}
+
+  /**
+   * 3 流式请求对象，返回一个包装集合
+   */
+  rpc GetPersonWrapperByAge(stream PersonRequest) returns(PersonResponseList) {}
+
+  /**
+   * 4 流式请求对象，流式结果返回
+   */
+  rpc BiTalk(stream StreamRequest) returns (stream StreamResponse) {}
+
+}
+
+message MyRequest {
+  string username = 1;
+}
+
+message MyResponse {
+  string realName = 1;
+}
+
+message PersonResponse {
+  string name = 1;
+  int32 age = 2;
+  string address = 3;
+}
+
+message PersonRequest {
+  int32 age = 1;
+}
+
+message PersonResponseList {
+  repeated PersonResponse personResponse = 1;
+}
+
+message StreamRequest {
+  string requestInfo = 1;
+}
+
+message StreamResponse {
+  string responseInfo = 1;
+}

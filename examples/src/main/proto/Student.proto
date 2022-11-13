@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package io.netty.proto;
+
+option optimize_for = SPEED;
+option java_package = "io.netty.proto";
+option java_outer_classname = "DataInfo";
+
+message Student {
+  string name = 1;
+  int32 age = 2;
+  string address = 3;
+}
